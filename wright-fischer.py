@@ -76,15 +76,16 @@ for simulation in range(args.s):
         if(args.v):print("Pop "+str(i)+": "+str(top_aleles))
 
     # Comparando os alelos mais populares
-    if collections.Counter(population_top_aleles[0]) == collections.Counter(population_top_aleles[1]):
-        similar["true"] += 1
-        if(args.v):print("True")
-    else: 
-        similar["false"] += 1
-        if(args.v):print("False")
+    if args.p > 1:
+        if collections.Counter(population_top_aleles[0]) == collections.Counter(population_top_aleles[1]):
+            similar["true"] += 1
+            if(args.v):print("True")
+        else: 
+            similar["false"] += 1
+            if(args.v):print("False")
 
-print(similar)
-print(similar["true"] / similar["false"])
-
+if args.p > 1:
+        print(similar)
+        print(similar["true"] / similar["false"])
 
 # TO-DO: traçar um grafico de como o a % de similares diminui com o aumento do numero de alelos
