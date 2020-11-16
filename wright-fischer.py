@@ -87,5 +87,3 @@ for simulation in range(args.s):
 if args.p > 1:
         print(similar)
         print(similar["true"] / similar["false"])
-
-# TO-DO: traçar um grafico de como o a % de similares diminui com o aumento do numero de alelos
